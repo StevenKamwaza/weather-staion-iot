@@ -180,17 +180,17 @@ void loop() {
   Serial.println(" LDR : " + (String) lightValue);
 
   //check if any reading is nan
-//  if(isnan(hum)|| isnan(temp) || isnan(rainValue)||isnan(lightValue)){
-//    Serial.println("Failed to read a sensor");
-//    delay(2000);
-//    return;
-//  }
+ if(isnan(hum)|| isnan(temp) || isnan(rainValue)||isnan(lightValue)){
+   Serial.println("Failed to read a sensor");
+   delay(2000);
+   return;
+ }
   
    
-//  ThingSpeak.writeField(thingsChannelNum, 1, temp,thingWriteAPI);
-//  ThingSpeak.writeField(thingsChannelNum, 2, hum,thingWriteAPI);
-//  ThingSpeak.writeField(thingsChannelNum, 3, rainValue,thingWriteAPI);
-//  ThingSpeak.writeField(thingsChannelNum, 4, lightValue,thingWriteAPI);
+ ThingSpeak.writeField(thingsChannelNum, 1, temp,thingWriteAPI);
+ ThingSpeak.writeField(thingsChannelNum, 2, hum,thingWriteAPI);
+ ThingSpeak.writeField(thingsChannelNum, 3, rainValue,thingWriteAPI);
+ ThingSpeak.writeField(thingsChannelNum, 4, lightValue,thingWriteAPI);
 
    // Send new readings to database
   if (Firebase.ready() && (millis() - sendDataPrevMillis > timerDelay || sendDataPrevMillis == 0)){
@@ -202,9 +202,9 @@ void loop() {
 
     parentPath= databasePath + "/" + String(timestamp);
 
-    json.set(tempPath.c_str(), String(25));
-    json.set(humPath.c_str(), String(76));
-    json.set(rainPath.c_str(), String(1));
+    json.set(tempPath.c_str(), String(temp));
+    json.set(humPath.c_str(), String(hum));
+    json.set(rainPath.c_str(), String(rainValue));
     json.set(timePath, String(timestamp));
     Serial.printf("Set json... %s\n", Firebase.RTDB.setJSON(&fbdo, parentPath.c_str(), &json) ? "ok" : fbdo.errorReason().c_str());
   }
