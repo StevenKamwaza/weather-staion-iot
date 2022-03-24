@@ -16,14 +16,14 @@
 #define WIFI_PASSWORD "10345679"
 
 // Insert Firebase project API Key
-#define API_KEY "AIzaSyDEP9Sp-gquKxZrQ1zxeCPpf4bNXIn2Kmc"
+#define API_KEY "YOUR FIRE DB WEB KEY"
 
 // Insert Authorized Email and Corresponding Password
 #define USER_EMAIL "stevenkamwaza@gmail.com"
 #define USER_PASSWORD "stevkamwa"
 
 // Insert RTDB URLefine the RTDB URL
-#define DATABASE_URL "projectdb-e7c09-default-rtdb.europe-west1.firebasedatabase.app"
+#define DATABASE_URL "your db url"
 
 // Define Firebase objects
 FirebaseData fbdo;
