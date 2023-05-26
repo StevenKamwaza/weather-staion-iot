@@ -5,24 +5,13 @@
 #include <ThingSpeak.h>
 #include <NTPClient.h>
 #include <WiFiUdp.h>
-
-/// Provide the token generation process info.
 #include "addons/TokenHelper.h"
-// Provide the RTDB payload printing info and other helper functions.
 #include "addons/RTDBHelper.h"
-
-// Insert your network credentials
 #define WIFI_SSID "Che-Steve"
 #define WIFI_PASSWORD "10345679"
-
-// Insert Firebase project API Key
 #define API_KEY "YOUR FIRE DB WEB KEY"
-
-// Insert Authorized Email and Corresponding Password
-#define USER_EMAIL "stevenkamwaza@gmail.com"
-#define USER_PASSWORD "stevkamwa"
-
-// Insert RTDB URLefine the RTDB URL
+#define USER_EMAIL "****@gmail.com"
+#define USER_PASSWORD "your_passowrd**"
 #define DATABASE_URL "your db url"
 
 // Define Firebase objects
